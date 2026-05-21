@@ -14,6 +14,9 @@
 
          <span class="title">Developpeur Web Front-End </span>
 
+          <!-- BOUTON MODE SOMBRE -->
+    <button id="toggle-theme" aria-label="Changer le thème">🌙 Mode sombre</button>
+
     </header>
 
     <!-- barre de navigation-->
@@ -65,6 +68,18 @@
             
         <section class="card" id="contacts">
             <h2> Contacts</H2>
+                <!-- FORMULAIRE DE CONTACT -->
+      <div class="form-groupe">
+        <input type="text" id="nom" placeholder="Votre nom" />
+      </div>
+      <div class="form-groupe">
+        <input type="email" id="email" placeholder="Votre email" />
+      </div>
+      <div class="form-groupe">
+        <textarea id="message" placeholder="Votre message" rows="4"></textarea>
+      </div>
+      <button class="btn-envoyer" id="btn-envoyer">📨 Envoyer</button>
+      <p id="confirmation" class="confirmation"></p>
                 <div class="contact-ligne">
                     <div class="contact-icone"></div>
                     <a href="mailto:jean.dupont@example.com">Email :jean.dupont@example.com</a>
@@ -91,5 +106,7 @@
       });
     });
   </script>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -10,6 +10,47 @@
   --rayon:       12px;
 }
 
+/* ================================
+   VARIABLES — THÈME SOMBRE
+   ================================ */
+[data-theme="dark"] {
+  --blanc:        #1e1e2e;
+  --fond:         #13131f;
+  --bleu-vif:     #1a6fa8;
+  --bleu-clair:   #1e3a5f;
+  --bleu-moyen:   #60a5fa;
+  --bleu-fonce:   #93c5fd;
+  --gris-leger:   #2e2e3e;
+  --texte:        #e2e8f0;
+  --texte-doux:   #94a3b8;
+  --ombre:        0 2px 8px rgba(0,0,0,0.3);
+  --ombre-hover:  0 8px 24px rgba(0,0,0,0.5);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* BOUTON MODE SOMBRE */
+#toggle-theme {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+#toggle-theme:hover {
+  background: rgba(255,255,255,0.35);
+  transform: scale(1.05);
+}
+
 /*variables CSS pour les couleurs, les ombres et les rayons de bordure*/
 header{
     background-color: rgb(0, 153, 255);
@@ -56,9 +97,12 @@ nav{
   border: 1px solid var(--gris-leger);
   padding: 32px 28px;
   box-shadow: var(--ombre);
+  opacity: 0;
+  transform: translateY(30px);
 
   /* TRANSITION : effet de montée au survol */
   transition: transform 0.28s ease, box-shadow 0.28s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 /*styles pour les cartes : couleur de fond, bordure, rayon, espacement et transition pour l'animation de survol*/
@@ -212,4 +256,79 @@ nav li a:hover {
 
 body {
   scroll-behavior: smooth;  /* scroll doux vers la profil choisie*/
+}
+.card.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+.card.visible:hover {
+  transform: translateY(-5px);
+}
+/* ================================
+   BOUTON TÉLÉCHARGER CV
+   ================================ */
+.btn-cv {
+  display: inline-block;
+  margin-top: 16px;
+  background-color: var(--bleu-vif);
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.btn-cv:hover {
+  background-color: var(--bleu-moyen);
+  transform: scale(1.05);
+}
+/* ================================
+   FORMULAIRE DE CONTACT
+   ================================ */
+.form-groupe {
+  margin-bottom: 12px;
+}
+ 
+.form-groupe input,
+.form-groupe textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--gris-leger);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background-color: var(--fond);
+  color: var(--texte);
+  transition: border-color 0.2s ease, background-color 0.3s ease;
+  resize: none;
+}
+ 
+.form-groupe input:focus,
+.form-groupe textarea:focus {
+  outline: none;
+  border-color: var(--bleu-vif);
+}
+ 
+.btn-envoyer {
+  background-color: var(--bleu-vif);
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+ 
+.btn-envoyer:hover {
+  background-color: var(--bleu-moyen);
+  transform: scale(1.05);
+}
+ 
+.confirmation {
+  margin-top: 10px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  min-height: 20px;
 }
