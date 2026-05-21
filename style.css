@@ -1,0 +1,215 @@
+/* CSS pour le CV en ligne de François */
+:root {
+  --blanc:       #ffffff;
+  --bleu-clair:  #dbeafe;
+  --bleu-moyen:  #2563a8;
+  --bleu-fonce:  #1e3a5f;
+  --gris-leger:  #e5e7eb;
+  --ombre:       0 2px 8px rgba(0,0,0,0.08);
+  --ombre-hover: 0 8px 24px rgba(0,0,0,0.14);
+  --rayon:       12px;
+}
+
+/*variables CSS pour les couleurs, les ombres et les rayons de bordure*/
+header{
+    background-color: rgb(0, 153, 255);
+    font-family: 'Playfair Display', serif;
+   font-size: 24px;
+   font-weight: 700;
+   letter-spacing: 1px
+}
+
+/*styles pour l'en-tête : couleur de fond, police, taille, poids et espacement des lettres*/
+h1{
+    text-align: center;
+    color:white;
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    line-height: 3;
+}
+
+/*styles pour le titre principal : centrage, couleur, police, taille et interligne*/
+.title{
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    justify-content: center;
+    display: flex;
+}
+
+/*styles pour l'en-tête : couleur de fond, police, taille, poids et espacement des lettres*/
+nav{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 0 24px;
+    gap: 8px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    font-size: 24px;
+    line-height: 2;
+    color: rgb(0, 153, 255);
+}
+/*styles pour l'en-tête : couleur de fond, police, taille, poids et espacement des lettres*/
+.card{
+     background-color: var(--blanc);
+  border-radius: var(--rayon);
+  border: 1px solid var(--gris-leger);
+  padding: 32px 28px;
+  box-shadow: var(--ombre);
+
+  /* TRANSITION : effet de montée au survol */
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+/*styles pour les cartes : couleur de fond, bordure, rayon, espacement et transition pour l'animation de survol*/
+main{
+     display: grid;                   /* active CSS Grid */
+     grid-template-columns: 1fr 1fr; /* 2 colonnes de même largeur */
+     gap: 24px;                      /* espace entre les cartes */
+     max-width: 960px;
+     margin: 24px auto;              /* centrage horizontal de la grille */
+     padding: 0 24px;
+     
+}
+
+/*styles pour le conteneur principal : disposition en grille, espacement, largeur maximale et centrage*/
+.card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  color: var(--bleu-fonce);
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--bleu-clair); /* ligne décorative sous le titre */
+}
+
+/*styles pour les titres à l'intérieur des cartes : police, taille, couleur, espacement et ligne décorative*/
+.card p {
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+/*styles pour les titres et les paragraphes à l'intérieur des cartes : police, taille, couleur, espacement et ligne décorative sous les titres*/
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--ombre-hover);
+}
+
+/*animation de survol pour les cartes : légère montée et ombre plus prononcée*/
+.badges {
+  display: flex;    /* Flexbox : badges en ligne */
+  flex-wrap: wrap;  /* retour à la ligne automatique */
+  gap: 10px;        /* espace entre chaque badge */
+  margin-top: 4px;
+}
+
+/*styles pour le conteneur des badges : disposition en ligne, retour à la ligne automatique, espacement et marge supérieure*/
+.badge {
+  background-color: var(--bleu-clair);
+  color: var(--bleu-moyen);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 6px 14px;
+  border-radius: 20px;   /* forme "pilule" */
+  border: 1px solid rgba(37,99,168,0.2);
+
+  /* TRANSITION : inversion de couleurs et zoom au survol */
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+/*styles pour les badges : couleurs, taille, espacement et transition pour l'animation de survol*/
+.badge:hover {
+  background-color: var(--bleu-moyen);
+  color: var(--blanc);
+  transform: scale(1.07);
+}
+
+/*animation de survol pour les badges : inversion des couleurs et légère croissance*/
+.experience-item {
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px dashed var(--gris-leger);
+}
+
+/*styles pour les éléments d'expérience : espacement, bordure, et suppression de la bordure pour le dernier élément*/
+.experience-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/*styles pour les éléments d'expérience : espacement, bordure, et suppression de la bordure pour le dernier élément*/
+.poste {
+  font-weight: 500;
+  color: var(--bleu-fonce);
+  font-size: 0.93rem;
+  margin-bottom: 3px;
+}
+
+/*styles pour les éléments d'expérience : espacement, bordure, et styles pour le poste*/
+.entreprise {
+  font-size: 0.83rem;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+/*styles pour les éléments d'expérience : espacement, bordure, et styles pour le poste et l'entreprise*/
+.description {
+  font-size: 0.88rem;
+}
+
+/*styles pour les éléments d'expérience : espacement, bordure, et styles pour le poste, l'entreprise et la description*/
+footer {
+  text-align: center;
+  padding: 16px;
+  font-size: 0.82rem;
+  color: white;
+  border-top: 1px solid var(--gris-leger);
+  margin-top: 16px;
+  background-color: rgb(0, 153, 255);
+}
+
+/*style pour le pied de page : centrage du texte, espacement, couleur et bordure supérieure*/
+nav ul {
+  list-style: none;      /* supprime les puces */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  padding: 0;
+  margin: 0;
+}
+
+/*style pour la liste de navigation : suppression des puces, disposition en ligne, centrage et espacement*/
+nav li a {               /* on cible a à l'intérieur des li */
+  color: rgb(0, 153, 255);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 6px;
+  display: inline-block;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, transform 0.2s ease, letter-spacing 0.2s ease;
+}
+
+/*style pour les liens de navigation : couleur, taille, espacement et transition pour l'animation de survol*/
+nav li a:hover {
+  background-color: rgba(255,255,255,0.25);
+   transform: scale(1.08);                    /* légère croissance */
+  letter-spacing: 0.5px;
+}
+
+/*animation de survol pour les liens de navigation : changement de fond, légère croissance et espacement des lettres*/
+@media (max-width: 640px) {
+  nav ul li a {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
+
+/*style pour les liens de navigation sur les écrans plus petits : réduction de la taille de la police et du padding*/
+
+body {
+  scroll-behavior: smooth;  /* scroll doux vers la profil choisie*/
+}
